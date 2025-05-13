@@ -1,23 +1,23 @@
 "use client"
 import 'react-native-url-polyfill/auto'
 
-// if (__DEV__) {
-//   const nativeConsole = { ...console }
+if (__DEV__) {
+  const nativeConsole = { ...console }
 
-//   const suppressOnDevice = (...args: any[]) => {
-//     if (typeof window === "undefined") {
-//       // This is the Metro/Node terminal (keep logs)
-//       nativeConsole.log(...args)
-//     }
-//     // Else: running in device environment (suppress)
-//   }
+  const suppressOnDevice = (...args: any[]) => {
+    if (typeof window === "undefined") {
+      // This is the Metro/Node terminal (keep logs)
+      nativeConsole.log(...args)
+    }
+    // Else: running in device environment (suppress)
+  }
 
-//   console.log = suppressOnDevice
-//   console.warn = suppressOnDevice
-//   console.error = suppressOnDevice
-//   console.info = suppressOnDevice
-//   console.debug = suppressOnDevice
-// }
+  console.log = suppressOnDevice
+  console.warn = suppressOnDevice
+  console.error = suppressOnDevice
+  console.info = suppressOnDevice
+  console.debug = suppressOnDevice
+}
 
 import { NavigationContainer } from "@react-navigation/native"
 import { createNativeStackNavigator } from "@react-navigation/native-stack"
